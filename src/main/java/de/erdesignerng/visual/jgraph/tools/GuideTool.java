@@ -15,15 +15,32 @@
  * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place - Suite 330, Boston, MA 02111-1307, USA.
  */
-package de.erdesignerng.visual.common;
+package de.erdesignerng.visual.jgraph.tools;
+
+import de.erdesignerng.visual.common.GenericModelEditor;
+import de.erdesignerng.visual.jgraph.ERDesignerGraph;
+
+import java.awt.event.MouseEvent;
+import java.awt.geom.Point2D;
 
 /**
- * Enum for the different tools available in the system.
- *
- * @author $Author: mirkosertic $
- * @version $Date: 2009-03-09 19:07:30 $
+ * @author $Author: Meta Arda Nabila
+ * @version $Date: 2021-06-21 19:07:30 $
  */
-public enum ToolEnum {
-    // Add Guide - Meta Arda Nabila
-    HAND, ENTITY, RELATION, COMMENT, VIEW, GUIDE
+public class GuideTool extends BaseTool {
+
+    public GuideTool(GenericModelEditor aEditor, ERDesignerGraph aGraph) {
+        super(aEditor, aGraph);
+    }
+
+    @Override
+    public boolean isForceMarqueeEvent(MouseEvent event) {
+        return true;
+    }
+
+    @Override
+    public boolean startCreateNew(MouseEvent e) {
+        graph.commandNewView(graph.fromScreen(new Point2D.Double(e.getX(), e.getY())));
+        return true;
+    }
 }

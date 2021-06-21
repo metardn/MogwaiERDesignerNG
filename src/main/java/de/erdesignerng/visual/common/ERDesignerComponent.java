@@ -79,6 +79,12 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
 
     private JToggleButton entityButton;
 
+    // Add guide button and action - Meta Arda Nabila
+
+    private JToggleButton guideButton;
+
+    private DefaultAction guideAction;
+
     private DefaultMenu lruMenu;
 
     private DefaultMenu storedConnections;
@@ -410,6 +416,15 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
                         viewButton.setSelected(true);
                     }
                 }, this, ERDesignerBundle.VIEWTOOL);
+        
+        // Add guide action - Meta Arda Nabila
+        guideAction = new DefaultAction(
+                e -> {
+                    commandSetTool(ToolEnum.VIEW);
+                    if (!guideButton.isSelected()) {
+                        guideButton.setSelected(true);
+                    }
+                }, this, ERDesignerBundle.GUIDE);
 
         DefaultAction theExportAction = new DefaultAction(this,
                 ERDesignerBundle.EXPORT);
@@ -779,6 +794,12 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
 
         theToolBar.addSeparator();
         theToolBar.add(intelligentLayoutCheckbox);
+        
+        // Add space - Meta Arda Nabila
+        theToolBar.addSeparator();
+        //Add button
+        guideButton = new DefaultToggleButton(guideAction);
+        theToolBar.add(guideButton);
 
         worldConnector.initTitle();
 

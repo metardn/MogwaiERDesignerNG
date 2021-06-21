@@ -339,6 +339,10 @@ public class JGraphEditor extends DefaultScrollPane implements GenericModelEdito
             case VIEW:
                 graph.setTool(new ViewTool(this, graph));
                 break;
+            // Add case GUIDE - Meta Arda Nabila
+            case GUIDE:
+                graph.setTool(new GuideTool(this, graph));
+                break;
         }
     }
 

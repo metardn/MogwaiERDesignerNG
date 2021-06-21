@@ -2,7 +2,7 @@
 <Resource>
     <Bundle interface="de.erdesignerng.ERDesignerBundle">
         <Entry id="TITLE">
-            <Text>Mogwai ER-Designer NG</Text>
+            <Text>Mogwai ER-Designer NG - Meta Arda Nabila</Text>
         </Entry>
         <Entry id="FILE">
             <Text lang="de">Datei</Text>
@@ -128,6 +128,14 @@
         <Entry id="VIEWTOOL">
             <Icon>/de/erdesignerng/icons/view.gif</Icon>
         </Entry>
+
+        <!-- Add guide interface - Meta Arda Nabila -->
+        <Entry id="GUIDE">
+            <Text lang="de">Lernprogramm</Text>
+            <Text lang="en">Tutorial</Text>
+            <Icon>/de/erdesignerng/icons/lamp-icon.png</Icon>
+        </Entry>
+
         <Entry id="ZOOM">
             <Text lang="de">Vergrößerung</Text>
             <Text lang="en">Zoom</Text>
